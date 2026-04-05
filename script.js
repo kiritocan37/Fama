@@ -10,9 +10,12 @@ function handleSubmit(e){
   e.preventDefault();
   var form=e.target;
   var data=new FormData(form);
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-  .then(function(){showPage('success')})
-  .catch(function(){showPage('success')});
+  fetch('https://formspree.io/f/xjgpplao',{method:'POST',headers:{'Accept':'application/json'},body:data})
+  .then(function(r){
+    if(r.ok){showPage('success');form.reset();}
+    else{alert('Something went wrong. Please try again.');}
+  })
+  .catch(function(){alert('Something went wrong. Please try again.');});
 }
 
 var i18n={
