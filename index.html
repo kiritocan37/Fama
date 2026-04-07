@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K490NX3HJ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K490NX3HJ1');
+</script>
 <script data-cfasync="false" src="script.js" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,8 +88,6 @@ section{padding:0 var(--pad)}
 .why-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600}
 .why-text{font-size:1rem;line-height:1.75;color:var(--dark2)}
 .port-page{padding-top:6rem;padding-bottom:6rem}
-
-/* ===== PORTFOLIO GRID FIX ===== */
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
 @media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.portfolio-grid{grid-template-columns:1fr}}
@@ -96,20 +102,14 @@ section{padding:0 var(--pad)}
 .portfolio-title{font-family:var(--ff-en);font-size:1.3rem;color:var(--dark);margin-bottom:.4rem;line-height:1.2}
 .lang-ru .portfolio-title,.lang-ge .portfolio-title{font-family:"Manrope",sans-serif;font-weight:800;font-size:1rem;letter-spacing:-.01em}
 .portfolio-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
-/* ============================= */
-
 .port-note{font-size:.82rem;color:var(--muted);letter-spacing:.04em;margin-bottom:2rem;font-style:italic}
 .rev-page{padding-top:6rem;padding-bottom:6rem}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem}
-@media(max-width:900px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.reviews-grid{grid-template-columns:1fr}}
-.review-card{background:var(--bg);padding:2rem;transition:background .3s}
-.review-card:hover{background:var(--bg2)}
-.review-stars{color:var(--accent);margin-bottom:1.2rem}
-.review-text{font-size:.9rem;line-height:1.8;color:var(--dark2);margin-bottom:1.5rem}
-.review-author{border-top:1px solid var(--border);padding-top:1rem}
-.review-name{font-size:.88rem;font-weight:700;color:var(--dark);display:block;margin-bottom:.2rem}
-.review-role{font-size:.78rem;color:var(--muted)}
+.review-cta-box{margin-top:3rem;border:1px solid var(--border);padding:5rem 3rem;text-align:center;background:var(--bg2)}
+@media(max-width:600px){.review-cta-box{padding:3rem 1.5rem}}
+.review-cta-stars{font-size:2.5rem;color:var(--accent);margin-bottom:1.5rem}
+.review-cta-title{font-family:var(--ff-en);font-size:clamp(2rem,4vw,3.5rem);color:var(--dark);margin-bottom:1.2rem}
+.lang-ru .review-cta-title,.lang-ge .review-cta-title,.lang-ua .review-cta-title{font-family:"Manrope",sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.8rem);letter-spacing:-.02em}
+.review-cta-desc{font-size:.95rem;color:var(--muted);line-height:1.9;max-width:520px;margin:0 auto 2.5rem}
 .how-page{padding-top:6rem;padding-bottom:6rem}
 .steps-grid{display:grid;gap:1px;background:var(--border);margin-top:3rem}
 .step-row{background:var(--bg);display:grid;grid-template-columns:60px 1fr 1fr;gap:2rem;padding:2.5rem 2rem;align-items:start;transition:background .3s}
@@ -170,14 +170,11 @@ footer{border-top:1px solid var(--border);padding:1.5rem var(--pad);display:flex
 .lang-ua .portfolio-title{font-family:"Manrope",sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
 .lang-ua .contact-info-title{font-family:"Manrope",sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.02em}
 .lang-ua .faq-title{font-family:"Manrope",sans-serif;font-weight:800;font-size:clamp(1.6rem,3.2vw,3.2rem);letter-spacing:-.02em}
-
-/* LIGHTBOX */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:2rem}
 .lightbox.open{display:flex}
 .lightbox-img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
 .lightbox-close{position:fixed;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
 .lightbox-close:hover{opacity:1}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
@@ -301,13 +298,11 @@ footer{border-top:1px solid var(--border);padding:1.5rem var(--pad);display:flex
 <div class="page" id="page-reviews">
 <section class="rev-page">
   <div class="section-header"><span class="section-num" data-i="rev_num">04 &mdash; Reviews</span><h2 class="section-title" data-i="rev_title">What clients say</h2></div>
-  <div class="reviews-grid">
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev1_text">"Fama transformed our presence. Bookings up 40%."</p><div class="review-author"><span class="review-name" data-i="rev1_name">Giorgi Kvaratskhelia</span><span class="review-role" data-i="rev1_role">Owner, Tamada Restaurant</span></div></div>
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev2_text">"3x more leads at half the cost."</p><div class="review-author"><span class="review-name" data-i="rev2_name">Natia Beridze</span><span class="review-role" data-i="rev2_role">CEO, Batumi Real Estate</span></div></div>
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev3_text">"Brand and website in 3 weeks."</p><div class="review-author"><span class="review-name" data-i="rev3_name">Mikhail Sorokin</span><span class="review-role" data-i="rev3_role">Founder, Tbilisi Law Partners</span></div></div>
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev4_text">"After SEO we rank #1. Traffic up 180%."</p><div class="review-author"><span class="review-name" data-i="rev4_name">Ana Lomidze</span><span class="review-role" data-i="rev4_role">Marketing Director, GeoTour</span></div></div>
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev5_text">"Strategy session was worth it."</p><div class="review-author"><span class="review-name" data-i="rev5_name">David Chikava</span><span class="review-role" data-i="rev5_role">Co-founder, Glide Hotel</span></div></div>
-    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text" data-i="rev6_text">"All four languages flawlessly."</p><div class="review-author"><span class="review-name" data-i="rev6_name">Elena Volkova</span><span class="review-role" data-i="rev6_role">Director, Kazbegi Resort</span></div></div>
+  <div class="review-cta-box">
+    <div class="review-cta-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <h3 class="review-cta-title" data-i="rev_cta_title">Become our first review</h3>
+    <p class="review-cta-desc" data-i="rev_cta_desc">We are just launching and looking for our first clients. Work with us &mdash; and show the world your satisfaction with our service. We will make sure you have something truly worth sharing.</p>
+    <button class="cta-btn" onclick="showPage('contact')" style="margin:0 auto"><span data-i="rev_cta_btn">Work with us</span> &#8599;</button>
   </div>
 </section>
 <div class="cta-bottom"><h2 class="cta-bottom-title" data-i="cta_title">Let&#39;s build<br>your <span>Fama</span></h2><p class="cta-bottom-email">fama&#46;agency&#46;ge&#64;proton&#46;me</p><button class="cta-bottom-btn" onclick="showPage('contact')"><span data-i="cta_btn">Get in touch</span> &#8599;</button></div>
@@ -326,7 +321,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem var(--pad);display:flex
   </div>
   <div class="faq-section">
     <h2 class="faq-title" data-i="faq_title">FAQ</h2>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i="faq1_q">How much does it cost?</span><i class="faq-icon">+</i></div><p class="faq-a" data-i="faq1_a">Website from $400. Ad management from $200/month. Strategy from $150.</p></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i="faq1_q">How much does it cost?</span><i class="faq-icon">+</i></div><p class="faq-a" data-i="faq1_a">As we are just launching, our prices will pleasantly surprise you. Write to us and get a personal offer &mdash; no hidden fees, transparent pricing for every budget.</p></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i="faq2_q">How long to see results?</span><i class="faq-icon">+</i></div><p class="faq-a" data-i="faq2_a">Paid ads &mdash; first week. SEO &mdash; 2-3 months. Website &mdash; 2-4 weeks.</p></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i="faq3_q">Do you work with small businesses?</span><i class="faq-icon">+</i></div><p class="faq-a" data-i="faq3_a">Absolutely. Most clients are restaurants, hotels, law firms, real estate.</p></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i="faq4_q">Can you work remotely?</span><i class="faq-icon">+</i></div><p class="faq-a" data-i="faq4_a">Yes, 100%. Clients across Georgia and internationally.</p></div>
