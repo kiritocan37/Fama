@@ -243,3 +243,5 @@ function setLang(l){
     if(t[k]!==undefined)el.innerHTML=t[k];
   });
 }
+
+setLang('en');
