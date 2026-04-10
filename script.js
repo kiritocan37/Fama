@@ -38,7 +38,7 @@ function handleSubmit(e){
   e.preventDefault();
   var form=e.target;
   var data=new FormData(form);
-  fetch('https://formspree.io/f/xjgpplao',{method:'POST',headers:{'Accept':'application/json'},body:data})
+  fetch('https://formspree.io/f/mpqogjpo',{method:'POST',headers:{'Accept':'application/json'},body:data})
   .then(function(r){
     if(r.ok){showPage('success');form.reset();}
     else{alert('Something went wrong. Please try again.');}
